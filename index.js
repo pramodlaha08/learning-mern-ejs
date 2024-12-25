@@ -19,5 +19,12 @@ app.get('/', (req, res) => {
 app.get('/rolldice', (req, res) => {
     let diceValue = Math.floor(Math.random() * 6) + 1;
     res.render('rolldice.ejs',{diceValue})
+    
 });
 
+
+app.get('/ig/:username', (req, res) => {
+    const followers = ["Muskan Thakur", "Sakshi Thakur", "Riya Thakur", "Shivani Thakur", "Salina Thakur"];
+    let { username } = req.params;
+    res.render('instagram.ejs', { username, followers });
+})

@@ -8,5 +8,8 @@
 <body>
     <h1>Roll dice</h1>
     <p>The output is <%= diceValue %> </p>
+    <% if(diceValue === 6){ %>
+        <h2>Nice you got the highest</h2>
+    <%}%>
 </body>
 </html>
