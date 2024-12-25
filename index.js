@@ -24,7 +24,10 @@ app.get('/rolldice', (req, res) => {
 
 
 app.get('/ig/:username', (req, res) => {
-    const followers = ["Muskan Thakur", "Sakshi Thakur", "Riya Thakur", "Shivani Thakur", "Salina Thakur"];
+    // const followers = ["Muskan Thakur", "Sakshi Thakur", "Riya Thakur", "Shivani Thakur", "Salina Thakur"];
+    const instaData = require('./data.json');
     let { username } = req.params;
-    res.render('instagram.ejs', { username, followers });
+    const data = instaData[username];
+    console.log(data);
+    res.render('instagram.ejs', {data});
 })

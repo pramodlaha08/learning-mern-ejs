@@ -7,14 +7,15 @@
 </head>
 <body>
     <h1>INSTAGRAM Logo</h1>
-    <p>This page belongs to @<%= username %> </p> 
-    <h1>Accounts that follows you</h1>
-    <ul>
-        <% for(let name of followers){ %>
-        <li><%= name %></li>
-        <%}%>
-    </ul>
+    <p>This page belongs to @<%= data.name %> </p> 
+    <button>Follow</button>
+    <button>Message</button>
+    <p>Followers: <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp; Following: <%= data.following %></p>
+    <hr>
+    <% for(let post of data.posts){ %>
+        <img src="<%=post.image%>" width="199px" alt="">
+        <p>Likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp; Comments: <%= post.comments %></p>
+    <%}%>
 
-    
 </body>
 </html>
